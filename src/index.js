@@ -1,5 +1,7 @@
 const btn = document.getElementById('greeting')
 
 btn.addEventListener('click', () => {
-    alert("Hello World")
+    const name = prompt('enter name')
+    console.log(`your name is ${name}`)
 })
+
