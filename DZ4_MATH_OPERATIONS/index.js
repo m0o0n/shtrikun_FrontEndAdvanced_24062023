@@ -51,7 +51,7 @@ calcBtn.addEventListener('click', () => {
     const message = validator(firstNum, secondNum, mathOperation)
     if(!message){
         const result = sumReducer({ firstNum, secondNum }, mathOperation)
-        alert(result)
+        alert(`${firstNum} ${mathOperation} ${secondNum} = ${result}`)
     }else {
         alert(message)
     }
