@@ -2,16 +2,16 @@ const createArr = document.querySelector('#create')
 
 createArr.addEventListener('click', ()=> {
     let arr = []
-    let arrLength = Number(prompt('Please enter length of array it should be from 6 to 10'))
+    const arrLength = Number(prompt('Please enter length of array it should be from 6 to 10'))
     if(arrLength && arrLength >= 6 && arrLength <= 10) {
         for (let i = 0; i < arrLength; i++) {
-            let arrValue = Number(prompt(`Please enter ${i} element of arr (it should be number)`))
-            if(Number.isNaN(arrValue)) {
+            let arrValue = prompt(`Please enter ${i} element of arr (it should be number)`).trim()
+            if(Number(arrValue) === NaN || arrValue === '') {
                 arr = []
                 alert('Вы ввели некоректное значение')
                 break
             } else {
-                arr.push(arrValue)
+                arr.push(Number(arrValue))
                 //Процесс внесения данных
                 console.log(arr)
             }
