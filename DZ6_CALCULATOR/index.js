@@ -18,21 +18,26 @@ const calculateReducer = (state, action) => {
 }
 
 const validate = (firstNum, secondNum, mathOperation) => {
-    let err = ''
-    if (!(/^-\d{1,}$|^\d{1,}$/).test(firstNum)) {
-        err = err.concat('- First argument is incorect it should be numeric symbol\n')
+    const errors = []
+    function isValidNumber(num){
+        return (/^-\d{1,}$|^\d{1,}$/).test(num)
+    }
+
+    function isValidOperation(operation){
+        return (/add|sub|mult|div/).test(operation)
+    }
+    if (!isValidNumber(firstNum)) {
+        errors.push('- First argument is incorect it should be numeric symbol\n')
     } 
-    if(!(/^-\d{1,}$|^\d{1,}$/).test(secondNum)){
-        err = err.concat('- Second argument is incorect it should be numeric symbol\n')
+    if(!isValidNumber(secondNum)){
+        errors.push('- Second argument is incorect it should be numeric symbol\n')
     }
-    if(!(/add|sub|mult|div/).test(mathOperation)) {
-        err = err.concat('- Math Operation argument is incorect it should be "add, sub, mult, div"\n')
+    if(!isValidOperation(mathOperation)) {
+        errors.push('- Math Operation argument is incorect it should be "add, sub, mult, div"\n')
     }
-    console.log()
-    if((/^-\d{1,}$|^\d{1,}$/).test(firstNum) && (/^-\d{1,}$|^\d{1,}$/).test(secondNum) && (/add|sub|mult|div/).test(mathOperation)){
-        err = ''
-        return {message: err, staus: true}
-    } return {message: err, staus: false}
+    if(errors.length){
+        return {message: errors.join('\n'), status: false}
+    } return {message: '', status: true}
 
     
 }
@@ -44,7 +49,7 @@ calculateBtn.addEventListener('click', () => {
 
     const isValid = validate(firstNum, secondNum, mathOperation)
 
-    if(isValid.staus){
+    if(isValid.status){
         const result = calculateReducer({firstNum, secondNum}, mathOperation)
         alert(result)
     } else {
