@@ -6,7 +6,7 @@ createArr.addEventListener('click', ()=> {
     if(arrLength && arrLength >= 6 && arrLength <= 10) {
         for (let i = 0; i < arrLength; i++) {
             let arrValue = prompt(`Please enter ${i} element of arr (it should be number)`).trim()
-            if(Number(arrValue) === NaN || arrValue === '') {
+            if(!arrValue || isNaN(arrValue)) {
                 arr = []
                 alert('Вы ввели некоректное значение')
                 break
