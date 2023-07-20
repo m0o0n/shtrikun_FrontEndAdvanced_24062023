@@ -56,14 +56,33 @@
 
 //5. Дане деяке число. Визначити, чи можна одержати це число шляхом зведення числа 3 у деякий ступінь. (Наприклад, числа 9, 81 можна отримати, а 13 - не можна).
 
-function isDerivative3(n, degree = 0) {
-    if(n === 1){
-        return `Число являеться производным от числа 3 в степени ${degree}`
-    } else if(!Number.isInteger(n)){
-        return `Число не являеться производным от числа 3`
-    } return isDerivative3(n/3, degree+=1)
+
+{
+    ((n)=>{
+
+        do {
+            n = n / 3
+            if(!Number.isInteger(n)){
+                console.log('Число не являеться производным от числа 3')
+                break;
+            } else if(n === 1){
+                console.log('Число являеться производным от числа 3')
+                break
+            }
+            
+        }while(Number.isInteger(n))
+        
+    })(244)
 }
-console.log(isDerivative3(27))
+
+// function isDerivative3(n, degree = 0) {
+//     if(n === 1){
+//         return `Число являеться производным от числа 3 в степени ${degree}`
+//     } else if(!Number.isInteger(n)){
+//         return `Число не являеться производным от числа 3`
+//     } return isDerivative3(n/3, degree+=1)
+// }
+// console.log(isDerivative3(27))
 
 
 
