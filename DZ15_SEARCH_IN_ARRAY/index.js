@@ -6,20 +6,9 @@ const arr = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63,
 
 {
     (() => {
-        const sum = arr.reduce((acc, cur) => {
-            if (cur > 0) {
-                acc += cur
-            }
-            return acc
-        }, 0)
-
-        const count = arr.reduce((acc, cur) => {
-            if (cur > 0) {
-                acc = [...acc, cur]
-            }
-            return acc
-        }, []).length
-        console.log(`В массиве ${count} положительных элементов их сумма равна ${sum}`)
+        const allPositive = arr.filter(a => a > 0)
+        const sum = allPositive.reduce((a, b) => a+b, 0)
+        console.log(`В массиве ${allPositive.length} положительных элементов их сумма равна ${sum}`)
     })()
 }
 
@@ -34,33 +23,12 @@ console.log(`Максимальный элемент в массиве равн�
 {
     (() => {
         
-        const negtiveCount = arr.reduce((acc, cur) => {
-            if (cur < 0) {
-                acc = [...acc, cur]
-            }
-            return acc
-        }, []).length
+        const negtiveCount = arr.filter(a => a < 0).length
+        const allPositive = arr.filter(a => a > 0)
+        const positiveMult = allPositive.reduce((a, b) => a * b, 1)
+        const odd = arr.filter(a => a > 0 && a % 2 !== 0)
+        const even = arr.filter(a => a > 0 && a % 2 === 0)
 
-        const positiveMult = arr.reduce((acc, cur) => {
-            if (cur > 0) {
-                acc *= cur
-            }
-            return acc
-        }, 1)
-
-        const odd = arr.reduce((acc, cur) => {
-            if (cur > 0 && cur%2 !== 0) {
-                acc = [...acc, cur]
-            }
-            return acc
-        }, [])
-        
-        const even = arr.reduce((acc, cur) => {
-            if (cur > 0 && cur%2 === 0) {
-                acc = [...acc, cur]
-            }
-            return acc
-        }, [])
         //4. Визначити кількість негативних елементів.
         console.log(`В массиве ${negtiveCount} отрицательных элементов`)
 
@@ -83,8 +51,7 @@ console.log(`Максимальный элемент в массиве равн�
 }
 
 //10. Знайти найбільший серед елементів масиву, остальні обнулити.
-for (let i = 0; i < arr.length; i++) {
-    arr[i] < Math.max(...arr) ? arr.splice(i, 1, 0) : null
-}
+const max = Math.max(...arr)
+const newArr = arr.map(e=> e === max ? e : 0)
 //P.s Решил мутировать исходный массив
-console.log(arr)
+console.log(newArr)
