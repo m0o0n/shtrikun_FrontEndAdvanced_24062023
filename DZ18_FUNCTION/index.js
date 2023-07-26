@@ -72,11 +72,30 @@ fillBtn.addEventListener('click', () => {
 
 //4. Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 
 //'func(" hello world", ['l', 'd'])' поверне нам "heo wor". Вихідний рядок та символи для видалення задає користувач.
-function removeLetters(string, letters){
-    if(letters.length === 0){
+function removeLetters(string, letters) {
+    if (letters.length === 0) {
         return string
     }
     return removeLetters(string.replace(new RegExp(letters.shift(), 'g'), ''), letters)
 }
 
-console.log(removeLetters("hello world", ['l', 'd']))
+const formatBtn = document.querySelector('#format')
+
+formatBtn.addEventListener('click', () => {
+    const str = prompt("Введіть строку для форматування")
+    if (str && str.trim()) {
+        let char = prompt("Вводіть потрібні символи коли потрібно припинити ввод натисніть скасувати обо відправте пусту строку")
+        const letters = []
+        letters.push(char)
+        do {
+            char = prompt("Вводіть потрібні символи коли потрібно припинити ввод натисніть скасувати обо відправте пусту строку")
+            char && letters.push(char)
+            !char && console.log(removeLetters(str, letters))
+        } while (char)
+    } else {
+        console.log('вы не ввели строку')
+    }
+
+})
+
+// console.log(removeLetters("hello world", ['l', 'd']))
