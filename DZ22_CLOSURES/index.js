@@ -1,11 +1,9 @@
-function cacheCounter(a){
+function createSum(a){
     let acc = a
-    return function(b){
-        return acc += b
-    }
+    return (b) => acc +=b
 }
 
-const sum = cacheCounter(0)
+const sum = createSum(0)
 console.log(sum(3))
 console.log(sum(5))
 console.log(sum(20))
