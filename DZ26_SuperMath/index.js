@@ -26,7 +26,7 @@ class SuperMath {
             this.obj = {x, y, znak}
         } else {
             console.log('Вы ввели некорктные значения повторите операцию ещё раз')
-            return this.input()
+            this.input()
         }
     }
     _doMath(x, y, znak) {
