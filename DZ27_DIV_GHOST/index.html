@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        p#text{
+            position: relative;
+            margin: 0 auto;
+        }
+        p#text:focus{
+            border: 1px solid aqua;
+        }
+        div#ghost{
+            position: relative;
+            display: none;
+            width: 100px;
+            height: 100px;
+            background: rgba(144, 144, 144, .7);
+        }
+    </style>
+</head>
+<body>
+    <p tabIndex="1" id="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium voluptatem nobis voluptatibus amet iusto sequi, voluptates consequatur, ratione libero quo reprehenderit, quisquam vel a exercitationem quasi id saepe officia consequuntur.</p>
+    <div id="ghost">I`m Ghost oohhhohohohoho</div>
+    <script src="./index.js"></script>
+</body>
+</html>
