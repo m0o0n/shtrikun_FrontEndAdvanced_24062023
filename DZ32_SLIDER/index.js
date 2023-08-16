@@ -21,6 +21,13 @@ const track = document.querySelector('.track')
 const maxScroll = slick.children.length - 1
 let scrollCount = 0
 
+if(scrollCount === maxScroll){
+    prev.style.display="flex"
+    next.style.display="none"
+} else if(scrollCount === 0){
+    prev.style.display="none"
+    next.style.display="flex"
+}
 
 function generateSlides(arr){
     return arr.reduce((acc,cur)=>{
@@ -33,11 +40,16 @@ function generateSlides(arr){
 
 next.addEventListener('click', () => {
     if (scrollCount < maxScroll) {
-        scrollCount++
+        scrollCount++ 
+        console.log(scrollCount, maxScroll)
         track.scroll({
             left: scrollCount*slider.clientWidth,
             behavior: "smooth",
         })
+        prev.style.display="flex"
+    }
+    if(scrollCount === maxScroll) {
+        next.style.display="none"
     }
 })
 
@@ -48,6 +60,10 @@ prev.addEventListener('click', () => {
             left: scrollCount*slider.clientWidth,
             behavior: "smooth",
         })
+        next.style.display="flex"
+    }
+    if(scrollCount === 0) {
+        prev.style.display="none"
     }
 })
 slides.forEach(e => {
