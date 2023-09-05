@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <th>Ім'я</th>
+            <th>Прізвище</th>
+            <th>Дата народження</th>
+            <th>Стать</th>
+            <th>Місто</th>
+            <th>Адреса</th>
+            <th>Мова</th>
+        </thead>
+        <tbody>
+            <tr>
+                <!-- <td id="table_name">Ім'я</td>
+                <td id="">Прізвище</td>
+                <td>Дата народження</td>
+                <td>Стasdasdsadasать</td>
+                <td>Місто</td>
+                <td>Адреса</td>
+                <td>Моваaaaaaaaaaaaa</td> -->
+            </tr>
+        </tbody>
+        
+    </table>
+    <form class="registration">
+        <div>
+            <label for="name">Введіть ваше ім'я</label>
+            <input type="text" name="name" id="name">
+        </div>
+
+        <div>
+            <label for="surname">Введіть ваше прізвище</label>
+            <input type="text" name="surname" id="surname">
+        </div>
+
+        <div>
+            <label for="birth">Введіть вашу дату народження dd/mm/yyyy</label>
+            <input type="text" name="birth" id="birth">
+        </div>
+
+        <fieldset>
+            <legend>Бульласка оберіть вашу стать</legend>
+            <label for="men">Men</label>
+            <input type="radio" id="men" name="gender" value="men">
+            <label for="women">Women</label>
+            <input type="radio" id="women" name="gender" value="women">
+            <label for="custom">Custom</label>
+            <input type="radio" id="custom" name="gender" value="custom">
+        </fieldset>
+
+        <div>
+            <label for="city">Оберіть місто де ви мешкаєте</label>
+            <select name="city" id="city">
+                <option selected value=""></option>
+                <option value="Київ">Київ</option>
+                <option value="Харків">Харків</option>
+                <option value="Одеса">Одеса</option>
+                <option value="Львів">Львів</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="address">Введіть вашу адресу</label>
+            <textarea name="address" id="address" cols="30" rows="10"></textarea>
+        </div>
+
+        <label for="languages">Оберіть мову(и) якими ви володієте</label>
+        <div id="languages">
+            <label for="english">Англійська</label>
+            <input type="checkbox" id="english" value="Англійська">
+            <label for="ukranian">Українська</label>
+            <input type="checkbox" id="ukranian" value="Українська">
+            <label for="spanish">Іспанська</label>
+            <input type="checkbox" id="spanish" value="Іспанська">
+        </div>
+        <div class="err">Всі поля повинні бути заповненні!</div>
+        <button type="submit">Зберегти</button>
+    </form>
+    
+    <script src="./index.js"></script>
+</body>
+</html>
