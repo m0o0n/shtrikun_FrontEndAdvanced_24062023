@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .search_form {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        .search_form label {
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .search_form input {
+            padding: 5px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        .comments, .post_container {
+            position: relative;
+            margin: 0 auto;
+            width: 400px;
+        }
+
+        .comments, .comment {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .comments:last-child {
+            border-bottom: 1px solid gray;
+        }
+
+        .comment {
+            border-top: 1px solid gray;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .comment span {
+            margin-bottom: 10px;
+        }
+        
+        .post_container {
+            margin-bottom: 25px;
+        }
+
+        .post_container h2 {
+            text-align: center;
+        }
+        
+
+        
+    </style>
+</head>
+<body>
+    <form class="search_form">
+        <label for="post_id">Введіть ідентифікатор поста</label>
+        <input type="number" min="1" max="100" value="1" name="post_id" id="post_id">
+        <button>Search</button>
+    </form>
+    <div class="posts_wrapper">
+        <div class="post">
+            <div class="post_container">
+           
+            </div>
+
+            <div class="comments">
+                
+            </div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
