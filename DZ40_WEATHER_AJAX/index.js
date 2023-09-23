@@ -52,12 +52,3 @@ blocks.city_select.addEventListener('change', ({target: {value}})=>{
 getWeather(blocks.city_select.value).then((data)=>{
     printData(data)
 })
-fetch('http://api.openweathermap.org/data/2.5/weather?q=LVIV&units=metric&APPID=5d066958a60d315387d9492393935c19')
-    .then(function() {
-        setTimeout(function(){
-            console.log('x');
-        });
-    })
-    .then(function() {
-        console.log('y');
-    })
