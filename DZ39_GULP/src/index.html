@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('./common/html/head.html', {
+title: 'Weaher'
+})
+
+<body>
+
+    <div class="card">
+        <select class="city_select" id="city_select">
+            <option selected value="ODESA">Odesa</option>
+            <option value="LVIV">Lviv</option>
+            <option value="KIEV">Kiev</option>
+            <option value="KHARKIV">Kharkiv</option>
+        </select>
+        <h2 id="city">Brussels</h2>
+        <h3>
+            <span id="decsription">
+                Cloudy
+            </span>
+
+            <span>
+                <span class="dot">•</span>
+                <span id="speed">
+                    10km/h
+                </span>
+
+                <span class="dot">•</span>
+                <span id="deg">
+                    deg 0%
+                </span>
+
+                <span class="dot">•</span>
+                <span id="humidity">
+                    Humidity 0%
+                </span>
+
+                <span class="dot">•</span>
+                <span id="pressure">
+                    Pressure 0%
+                </span>
+
+
+            </span>
+        </h3>
+        <div class="temp_icon">
+            <h1 id="temp">23°</h1>
+            <div class="forecast_icon">
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./js/index.min.js"></script>
+
+</body>
+
+</html>
