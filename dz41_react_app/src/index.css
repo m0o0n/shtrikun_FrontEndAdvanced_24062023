@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.layout{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout .wrapper {
+  position: relative;
+  display: flex;
+}
+
+
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  background: rgb(41, 41, 41);
+  color: white;
+  font-weight: 600;
+}
+
+.navigation {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  min-height: 100vh;
+  height: 100%;
+  background:rgb(41, 41, 41);
+  
+}
+
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  transition: all .3s linear;
+}
+
+.navigation ul li:hover{
+  cursor: pointer;
+  background: rgba(144,144,144, 0.5);
+}
+
+.navigation ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  background: rgb(34, 34, 34);
+  color: white;
+}
